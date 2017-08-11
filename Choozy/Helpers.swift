@@ -195,7 +195,15 @@ func isUserLoggedIn() -> Bool{
 }
 
 func onBoardingCheck() -> Bool {
-    let onBoardCheck = false
+    var onBoardCheck = true
+    let user = ChoozyUser.current()?.isNew
+    
+    if user == true{
+        onBoardCheck = true
+    }else{
+        onBoardCheck = false
+    }
+
     return onBoardCheck
 }
 

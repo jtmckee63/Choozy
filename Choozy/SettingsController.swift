@@ -56,6 +56,7 @@ class SettingsController: UIViewController {
     }
     func logout(){
         ChoozyUser.logOut()
+        self.dismissViewController()
         self.showLoginController()
     }
 //    func showTutorial() {

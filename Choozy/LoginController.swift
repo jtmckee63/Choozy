@@ -21,7 +21,7 @@ class LoginController: UIViewController {
     //onboarding
     var newUser = false
     let userDefaults = UserDefaults.standard
-
+    var onboardCheck = onBoardingCheck()
     @IBOutlet var choozyLogo: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +61,7 @@ class LoginController: UIViewController {
             
             if let user = user{
                 if user.isNew{
+                    self.onboardCheck = true
                     self.facebookRegisterUser()
                     self.newUser = true
                 }else{
@@ -70,13 +71,11 @@ class LoginController: UIViewController {
                     }
                     
                     if let _ = choozyUser.firstName, let _ = choozyUser.lastName, let _ = choozyUser.profilePictureUrl{
-                        
-                        self.dismissViewController()
-                        if self.newUser == false {
+                        if self.newUser == true {
                             print("it works TymeRex")
-                            onBoardingCheck()
                         }
-                        
+                        self.dismissViewController()
+//                        self.showOnboardController()                        
                         //Refresh Our Data after we finish creating an account.
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshAllData"), object: nil, userInfo: nil)
                     }else{
@@ -131,9 +130,10 @@ class LoginController: UIViewController {
                                                 if success{
                                                     
                                                     Drop.upAll()
-                                                    
-                                                    self.dismissViewController()
-//                                                    self.showOnboardController()
+                                                    //JT added for onboarding
+                                                    if self.onboardCheck == true {
+                                                        self.dismissViewController()
+                                                    }
                                                     //Refresh Our Data after we finish creating an account.
                                                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshAllData"), object: nil, userInfo: nil)
                                                     

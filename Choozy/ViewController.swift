@@ -49,7 +49,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let userDefaults = UserDefaults.standard
     var tutorialCheck = false
     var logoutCheck = false
-    
+    var onBoardCheck = onBoardingCheck()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -147,8 +147,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         //Gesture for Dismissing the Keyboard
         let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(gesture)
-        
+      
         if !isUserLoggedIn(){
+            onBoardCheck = true
             self.tutorialCheck = false
             logout()
         }else{
@@ -165,7 +166,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
             alertController.addAction(onboard)
             print("THIS WOKRS FOR ONBOARDING __________---------------__________---------")
-            
+            if onBoardCheck == true {
+                self.present(alertController, animated: true, completion: nil)
+            }
             if (tutorialCheck == false) {
                 if (logoutCheck == true){
                     self.present(alertController, animated: true, completion: nil)
