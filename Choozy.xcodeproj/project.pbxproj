@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C37FD8A1F46840C002E7E5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C37FD891F46840C002E7E5B /* GoogleService-Info.plist */; };
 		4C49FA991E8C7261002D976A /* PostAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49FA981E8C7261002D976A /* PostAnnotation.swift */; };
 		4C49FA9C1E8C765E002D976A /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49FA9B1E8C765E002D976A /* DetailController.swift */; };
 		4C49FAA11E8C7A67002D976A /* DetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49FA9F1E8C7A67002D976A /* DetailHeaderCell.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C37FD891F46840C002E7E5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C49FA981E8C7261002D976A /* PostAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnotation.swift; sourceTree = "<group>"; };
 		4C49FA9B1E8C765E002D976A /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		4C49FA9F1E8C7A67002D976A /* DetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailHeaderCell.swift; path = Choozy/DetailHeaderCell.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				4C49FA9A1E8C7275002D976A /* View */,
 				4C6895EB1E692CD400208365 /* Assets */,
 				4C6F0EBA1E67B1B700D26955 /* Info.plist */,
+				4C37FD891F46840C002E7E5B /* GoogleService-Info.plist */,
 				4C6F0EB21E67B1B700D26955 /* Choozy.xcdatamodeld */,
 			);
 			path = Choozy;
@@ -385,6 +388,7 @@
 				4C49FABE1E8CAEDE002D976A /* PostHeaderReusableView.xib in Resources */,
 				4CB9F09E1E7087F800113585 /* PostCommentCell.xib in Resources */,
 				4C49FAC31E8DD5EB002D976A /* ProfileHeaderReusableView.xib in Resources */,
+				4C37FD8A1F46840C002E7E5B /* GoogleService-Info.plist in Resources */,
 				4CB9F0901E6E356500113585 /* PostMediaViewCell.xib in Resources */,
 				4C49FAB21E8CA3EF002D976A /* NewPostController.xib in Resources */,
 				ABB8AB9F1F3D2BCC00117420 /* Assets.xcassets in Resources */,

@@ -17,6 +17,7 @@ import SwiftyJSON
 import GooglePlaces
 import DropDownMenuKit
 import BTNavigationDropdownMenu
+import GoogleMobileAds
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
     
@@ -176,6 +177,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
 
         }
+        
+        loadAds()
     }
     
         //JT added
@@ -780,7 +783,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         UIApplication.shared.registerForRemoteNotifications()
     }
     
+    func loadAds(){
+        let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView.frame = CGRect(x: 0, y: self.view.bounds.height - bannerView.bounds.size.height, width: bannerView.bounds.size.width, height: bannerView.bounds.size.height)
+        bannerView.adUnitID = "ca-app-pub-1342363711116496/9612603434"
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        bannerView.alpha = 0
+        self.view.addSubview(bannerView)
+        bannerView.load(GADRequest())
+    }
 }
+
+//MARK: - GADBannerView Delegate
+extension ViewController: GADBannerViewDelegate {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        self.view.addSubview(bannerView)
+        bannerView.fadeIn()
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        bannerView.fadeOut()
+    }}
 
 struct SearchPlace {
     var name: String?

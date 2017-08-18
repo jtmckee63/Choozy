@@ -14,6 +14,9 @@ import Parse
 import ParseFacebookUtilsV4
 import SwiftyDrop
 import GooglePlaces
+import GoogleMobileAds
+import Firebase
+import GoogleMobileAds
 import paper_onboarding
 var placePost = false
 
@@ -68,7 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Google Places
         GMSPlacesClient.provideAPIKey("AIzaSyAO54B6oPO_SQGxlMIGzC8e0Khj3Dsy_no")
-
+        
+        //Configure Firebase -- used for Analytics && Ads
+        FIRApp.configure()
+        GADMobileAds.configure(withApplicationID: adDefaults.appId)
         return true
     }
     
